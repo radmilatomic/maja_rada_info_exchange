@@ -1,9 +1,5 @@
-body {
-    font-family: "Gill Sans", system-ui;
-}
-
 header {
-    height: 60px;
+    height: 45px;
     position: fixed;
     text-align: center;
     background-color: #3C3C3C;
@@ -15,7 +11,7 @@ header {
 }
 header .headerHeadline {
     color: white;
-    font-size: 25px;
+    font-size: 15px;
     margin-top: 10px;
     
    
