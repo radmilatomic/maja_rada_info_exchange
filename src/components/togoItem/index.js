@@ -33,7 +33,7 @@ class ConnectedTogoItem extends Component{
  }
 
   fetchPlaces(){
-    const url=new URL('http://radmilatomic.pythonanywhere.com/api/places')
+    const url=new URL('https://radmilatomic.pythonanywhere.com/api/places')
    const request=new Request(url,{
     method:'GET',
     mode:'cors'
@@ -49,7 +49,7 @@ class ConnectedTogoItem extends Component{
     console.log("place will be deleted on this click")
     e.preventDefault()
     
-   const url=new URL('http://radmilatomic.pythonanywhere.com/api/deleteplace/'+this.props.item.id)
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/deleteplace/'+this.props.item.id)
    const request=new Request(url,{
     method:'GET',
     mode:'no-cors'

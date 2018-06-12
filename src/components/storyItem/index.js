@@ -32,7 +32,7 @@ class ConnectedStoryItem extends Component{
  }
 
   fetchStories(){
-    const url=new URL('http://radmilatomic.pythonanywhere.com/api/stories')
+    const url=new URL('https://radmilatomic.pythonanywhere.com/api/stories')
    const request=new Request(url,{
     method:'GET',
     mode:'cors'
@@ -47,7 +47,7 @@ class ConnectedStoryItem extends Component{
     console.log("story will be deleted on this click")
     e.preventDefault()
     
-   const url=new URL('http://radmilatomic.pythonanywhere.com/api/deletestory/'+this.props.item.id)
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/deletestory/'+this.props.item.id)
    const request=new Request(url,{
     method:'GET',
     mode:'no-cors'

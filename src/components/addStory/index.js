@@ -35,7 +35,7 @@ class ConnectedAddStory extends Component {
  }
 
   fetchStories(){
-    const url=new URL('http://radmilatomic.pythonanywhere.com/api/stories')
+    const url=new URL('https://radmilatomic.pythonanywhere.com/api/stories')
    const request=new Request(url,{
     method:'GET',
     mode:'cors'
@@ -49,7 +49,7 @@ class ConnectedAddStory extends Component {
   addMethod(e){
     e.preventDefault()
     var form=new FormData(document.getElementById('form'))
-   const url=new URL('http://radmilatomic.pythonanywhere.com/api/addstory')
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/addstory')
    const request=new Request(url,{
     method:'POST',
     body:form,

@@ -35,7 +35,7 @@ class ConnectedAddPlace extends Component {
  }
 
   fetchPlaces(){
-    const url=new URL('http://radmilatomic.pythonanywhere.com/api/places')
+    const url=new URL('https://radmilatomic.pythonanywhere.com/api/places')
    const request=new Request(url,{
     method:'GET',
     mode:'cors'
@@ -49,7 +49,7 @@ class ConnectedAddPlace extends Component {
   addMethod(e){
     e.preventDefault()
     var form=new FormData(document.getElementById('form'))
-   const url=new URL('http://radmilatomic.pythonanywhere.com/api/addplace')
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/addplace')
    const request=new Request(url,{
     method:'POST',
     body:form,
