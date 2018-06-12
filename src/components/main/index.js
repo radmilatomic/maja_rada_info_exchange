@@ -7,6 +7,7 @@ import Home from '../../containers/home'
 import ToGo from '../../containers/togo'
 import ToTell from '../../containers/totell'
 import PrivateRoute from '../privateRoute';
+import {PATH} from "../../const"
 
 
 class Main extends Component{
@@ -15,10 +16,10 @@ class Main extends Component{
         return(
           <div id="main">
             <Switch>
-            <PrivateRoute exact path="/" component ={Home}/>
-            <Route exact path="/login" component={Login}/>
-            <PrivateRoute exact path="/totell" component ={ToTell}/>
-            <PrivateRoute exact path="/togo" component ={ToGo}/>
+            <PrivateRoute exact path={PATH+"/"} component ={Home}/>
+            <Route exact path={PATH+"/login"} component={Login}/>
+            <PrivateRoute exact path={PATH+"/totell"} component ={ToTell}/>
+            <PrivateRoute exact path={PATH+"/togo"} component ={ToGo}/>
             </Switch>
             </div>
         );

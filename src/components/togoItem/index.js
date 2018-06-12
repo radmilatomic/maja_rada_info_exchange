@@ -19,7 +19,7 @@ class ConnectedTogoItem extends Component{
             
             <div style={{width:'40%'}}> <div id="taskId" style={{width:'30px'}}>{this.props.item.id} </div> {this.props.item.description} </div>
             <span style={{width:'150px'}} > {this.props.item.visited==="true"? 'Yes ':'No '} </span>
-            <span style={{width:'150px'}} id="task-assignee" onClick={this.showUserDetails}> {selectedAdmin.password}</span>
+            <span style={{width:'150px'}} id="task-assignee" onClick={this.showUserDetails}> {selectedAdmin.name}</span>
             <input style={{width:'85px'}} type="submit"  value="Edit Plan" className="taskButton"/>
             <input style={{width:'85px'}} type="submit" value="Delete"  className="taskButton"/>
           </section>

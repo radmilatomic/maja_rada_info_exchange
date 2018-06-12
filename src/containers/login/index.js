@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {connect} from "react-redux";
 import {Redirect} from "react-router-dom";
 import {isAuth, setAdmins} from "../../actions";
+import {PATH} from "../../const"
 
 import './style.css'
 
@@ -47,7 +48,7 @@ componentDidMount(){
  render(){
     if(this.props.auth) {
    return <Redirect to={{
-    pathname:'/',
+    pathname:PATH+'/',
    }}
    />
   }
@@ -55,7 +56,7 @@ componentDidMount(){
   return (
     <div id="signInContainer">
       <div id="signIn">
-        <h2>SIGN IN</h2>
+        <div id="h2">SIGN IN</div>
           <div className="group">
             <input className="loginInput"
               ref={(a) => this.inputEmail = a}

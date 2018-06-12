@@ -17,3 +17,13 @@ export const setStories=stories=>(
     {type:"STORIES",
     stories:stories}
     )
+
+export const setPlaceInput=flag=>(
+    {type:"PLACE_INPUT",
+    flag:flag}
+    )
+
+export const setStoryInput=flag=>(
+    {type:"STORY_INPUT",
+    flag:flag}
+    )

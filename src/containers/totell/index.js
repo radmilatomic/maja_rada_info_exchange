@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux"; 
 import './style.css'
-import { setStories } from "../../actions";
+import { setStories, setStoryInput } from "../../actions";
+import AddStory from '../../components/addStory'
 import StoryList from '../../components/storyList'
 
 const mapDispatchToProps = dispatch => {
  return {
   setStories: stories => dispatch(setStories(stories)),
+  setStoryInput:flag=>dispatch(setStoryInput(flag))
  };
 };
 
@@ -17,9 +19,20 @@ const mapStateToProps = state => {
 
 class ConnectedToTell extends Component{
 
+  constructor(props){
+    super(props);
+    this.showForm=this.showForm.bind(this)
+  }
+
 setData(responseData){
   console.log(responseData);
   this.props.setStories(responseData); 
+ }
+
+ showForm(e){
+  e.preventDefault();
+  this.props.setStoryInput(true)
+  
  }
 
 componentDidMount(){
@@ -37,7 +50,13 @@ componentDidMount(){
 }
 
  render(){
-  return (<div><StoryList/></div>)
+  return (
+    <div>
+    <AddStory/>
+    <input type="submit" value="Add Story to list" onClick={this.showForm}/>
+    <div><StoryList/></div>
+    </div>
+    )
  }
 }
 

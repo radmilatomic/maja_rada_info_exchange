@@ -1,0 +1,149 @@
+.modal {
+  width: 320px;
+  position: absolute;
+  
+  
+  margin: 9px auto;
+  z-index: 2;
+  background-color: #3C3C3C;
+  padding: 20px 10px;
+  color: #49dda9;
+  border: solid #49dda9  2px;
+  border-radius: 10px;
+  font: 400 14px "Gill Sans", system-ui;
+  
+}
+
+@media(max-width: 500px){
+    .modal{
+        left: 2%;
+        top: 60px;
+    }
+    
+}
+
+@media(min-width: 501px){
+    .modal{
+        left: 20%;
+        top: 20%;
+    }
+    
+}
+
+
+#detailsWrapper{
+  margin-left: 5%;
+  margin-right:5%;
+}
+#showId{
+  left:2%;
+  font-family:"Gill Sans", system-ui;
+
+}
+#showCompleted{
+  right:2%;
+  font-family:"Gill Sans", system-ui;
+}
+
+/*.btn {
+  background: #fff;
+  font-size: 15px;
+  width: 10%;
+  margin-bottom: 4px;
+  color: #2196f3;
+  border: none;
+  padding: 5px 11px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  outline: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  -webkit-transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}*/
+
+.buttonDetails {
+    padding: 8px; 
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff; 
+    color: #3c3c3c; 
+    cursor: pointer;
+    font-family: "Gill Sans", system-ui;
+}
+.buttonCompleted {
+    padding: 7px; 
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background: transparent; 
+    color: #ffffff; 
+    cursor: pointer;
+    font-family: "Gill Sans", system-ui;
+}
+
+.inline-field{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.description-field{
+  display:flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  
+}
+
+.buttonsWrapper{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  
+}
+
+.adminSelect{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family:"Gill Sans", system-ui;
+  
+}
+
+
+.inline-field input,
+.inline-field label,
+.inline-field div
+
+ {
+  display: inline-block;
+  margin-bottom: 0; 
+  vertical-align: middle; 
+}
+
+#descriptionDetails{
+   padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    
+    border: 1px solid #dddddd;
+    font: 400 14px "Gill Sans", system-ui;
+    
+    height:150px;
+    word-wrap: break-word;
+}
+
+#changeUser{
+   padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+    border: 1px solid #dddddd;
+     font: 400 14px "Gill Sans", system-ui;
+}
+
+.detailsLabel{
+  margin-right: 5px;
+}

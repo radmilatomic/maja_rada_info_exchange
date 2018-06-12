@@ -2,6 +2,8 @@ const initialState = {
   admins:[],
   auth : false,
   places:[],
+  showPlaceInput:false,
+  showStoryInput:false
   
 
 }
@@ -20,6 +22,12 @@ const rootReducer = (state = initialState, action) => {
 
     case "STORIES":
     return Object.assign({},state, {stories:action.stories});
+
+    case "PLACE_INPUT":
+    return Object.assign({},state, {showPlaceInput:action.flag});
+
+    case "STORY_INPUT":
+    return Object.assign({},state, {showStoryInput:action.flag});
       
     default:
       return state;
