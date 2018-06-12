@@ -36,7 +36,7 @@ setData(responseData){
 
 componentDidMount(){
   
-   const url=new URL('http://radmilatomic.pythonanywhere.com/api/places')
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/places')
    const request=new Request(url,{
     method:'GET',
     mode:'cors'
@@ -49,7 +49,7 @@ componentDidMount(){
 
  render(){
   return (
-    <div>
+    <div id="togo">
     <AddPlace/>
     <input type="submit" value="Add Place To List" onClick={this.showForm}/>
     <div><TogoList/></div>

@@ -28,7 +28,7 @@ setAdmins(response){
 
 componentDidMount(){
   
-   const url=new URL('http://radmilatomic.pythonanywhere.com/api/admins')
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/admins')
    const request=new Request(url,{
     method:'GET',
     mode:'cors'

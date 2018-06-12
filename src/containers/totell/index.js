@@ -37,7 +37,7 @@ setData(responseData){
 
 componentDidMount(){
   if(!this.props.stories){
-   const url=new URL('http://radmilatomic.pythonanywhere.com/api/stories')
+   const url=new URL('https://radmilatomic.pythonanywhere.com/api/stories')
    const request=new Request(url,{
     method:'GET',
     mode:'cors'
