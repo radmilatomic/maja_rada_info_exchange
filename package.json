@@ -1,6 +1,7 @@
 {
   "name": "maja_rada_info_exchange",
   "version": "0.1.0",
+  "homepage":"https://radmilatomic.github.io/maja_rada_info_exchange",
   "private": true,
   "dependencies": {
     "react": "^16.3.2",
