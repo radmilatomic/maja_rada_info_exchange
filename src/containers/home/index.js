@@ -9,9 +9,11 @@ class Home extends Component{
 
 
  render(){
-  return <div> 
-  <Link to={PATH+"/totell"}><button>Sta treba da ti ispricam</button></Link>
-  <Link to={PATH+"/togo"}><button>Gde treba da idemo</button></Link>
+  return <div id="home"> 
+  <div id="homecontainer">
+  <Link to={PATH+"/totell"} style={{ textDecoration: 'none' }}><button className="linkButton">Sta treba da ti ispricam</button></Link>
+  <Link to={PATH+"/togo"} style={{ textDecoration: 'none' }}><button className="linkButton">Gde treba da idemo</button></Link>
+  </div>
   </div>
  }
 }

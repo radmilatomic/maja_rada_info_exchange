@@ -66,8 +66,8 @@ class ConnectedStoryItem extends Component{
             <div style={{width:'40%'}}> <div id="taskId" style={{width:'30px'}}>{this.props.item.id} </div> {this.props.item.story} </div>
             <span style={{width:'150px'}} > {this.props.item.told==="true"? 'Yes ':'No '} </span>
             <span style={{width:'150px'}} id="task-assignee" onClick={this.showUserDetails}> {selectedAdmin.name}</span>
-            <input style={{width:'85px'}} type="submit"  value="Edit Story" className="taskButton"/>
-            <input style={{width:'85px'}} type="submit" value="Delete Story"  className="taskButton" onClick={this.deleteStory}/>
+            <input style={{width:'85px'}} type="submit"  value="Edit Story" className="storyButton"/>
+            <input style={{width:'85px'}} type="submit" value="Delete Story"  className="storyButton" onClick={this.deleteStory}/>
           </section>
             )
     }

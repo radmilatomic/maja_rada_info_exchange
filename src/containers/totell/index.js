@@ -51,9 +51,9 @@ componentDidMount(){
 
  render(){
   return (
-    <div>
+    <div id="totell">
     <AddStory/>
-    <input type="submit" value="Add Story to list" onClick={this.showForm}/>
+    <input type="submit" id="addStoryButton" value="Add Story to list" onClick={this.showForm}/>
     <div><StoryList/></div>
     </div>
     )

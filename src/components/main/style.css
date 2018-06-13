@@ -1,12 +1,12 @@
 #main{
   bottom: 16px;
-  top: 60px;
+  top: 45px;
   
   position: absolute;
   overflow-y: auto;
   overflow-x: hidden;
   width: 100%;
-  background-image:url(../../assets/back3.jpg);
+  
  
 
 }

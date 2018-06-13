@@ -4,10 +4,22 @@
   white-space: nowrap;
   margin: 10px; 
   padding: 10px;
-  background: #ffffff;
-  border: 1px solid #e3e3e3;
+  background: #2d2b2c;
+  border: 1px solid #49dda9;
   border-radius: 5px;
-  color:#3C3C3C;
+  color:#ffffff;
   align-items: center;
   justify-content: space-between;
   }
+
+.storyButton{
+    padding: 10px; 
+    border-radius: 5px;
+    border: 1px solid #49dda9;
+    background-color: #49dda9; 
+    color: #ffffff; 
+    cursor: pointer;
+    font-family: "Gill Sans", system-ui;
+    display: block;
+    text-decoration: none;
+}
