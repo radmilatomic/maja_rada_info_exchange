@@ -67,7 +67,7 @@ class ConnectedStoryItem extends Component{
             <div className="storydiv"> {this.props.item.story} </div>
             <div className="bottom-details">
             <div className="story-details">
-              <div style={{width:'150px'}} className="story-assignee" > Person to tell:{selectedAdmin.name}</div>
+              <div style={{width:'150px'}} className="story-assignee" > Person to tell:{" "+selectedAdmin.name}</div>
               <div> Told? {this.props.item.told==="true"? 'Yes ':'No '} </div>
             </div>
             <div className="story-buttons">

@@ -70,8 +70,8 @@ class ConnectedTogoItem extends Component{
             <div className="placediv">  {this.props.item.description} </div>
              <div className="bottom-details">
              <div className="place-details">
-             <div className="place-assignee">Suggested by: {selectedAdmin.name}</div>
-            <div > Visited?{this.props.item.visited==="true"? 'Yes ':'No '} </div>
+             <div className="place-assignee">Suggested by: {" "+selectedAdmin.name}</div>
+            <div > Visited?{this.props.item.visited==="true"? ' Yes ':' No '} </div>
             </div>
             <div className="place-buttons">
             <input style={{width:'85px'}} type="submit"  value="Edit Plan" className="placeButton"/>

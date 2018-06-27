@@ -1,8 +1,9 @@
 #addStoryButton{
 
     padding: 10px; 
+    margin-left: 20px;
     border-radius: 5px;
-    border: 1px solid #49dda9;
+    border: 1px solid #f9e8e5;
     background-color: #2d2b2c; 
     color: #ffffff; 
     cursor: pointer;
@@ -16,4 +17,9 @@
    height:100%;
   
    
+}
+
+#stroy-list{
+    width:100%;
+    align-items: center;
 }

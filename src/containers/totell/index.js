@@ -54,7 +54,7 @@ componentDidMount(){
     <div id="totell">
     <AddStory/>
     <input type="submit" id="addStoryButton" value="Add Story to list" onClick={this.showForm}/>
-    <div><StoryList/></div>
+    <div id="story-list"><StoryList/></div>
     </div>
     )
  }
