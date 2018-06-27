@@ -61,14 +61,21 @@ class ConnectedStoryItem extends Component{
       if(this.props.stories.length>0){
         const selectedAdmin=this.props.admins.filter(admin=>admin.id===this.props.item.to_tell_by)[0]
         return(
-          <section className="table-row">
+          <div className="story-item">
             
-            <div style={{width:'40%'}}> <div id="taskId" style={{width:'30px'}}>{this.props.item.id} </div> {this.props.item.story} </div>
-            <span style={{width:'150px'}} > {this.props.item.told==="true"? 'Yes ':'No '} </span>
-            <span style={{width:'150px'}} id="task-assignee" onClick={this.showUserDetails}> {selectedAdmin.name}</span>
-            <input style={{width:'85px'}} type="submit"  value="Edit Story" className="storyButton"/>
-            <input style={{width:'85px'}} type="submit" value="Delete Story"  className="storyButton" onClick={this.deleteStory}/>
-          </section>
+           
+            <div className="storydiv"> {this.props.item.story} </div>
+            <div className="bottom-details">
+            <div className="story-details">
+              <div style={{width:'150px'}} className="story-assignee" > Person to tell:{selectedAdmin.name}</div>
+              <div> Told? {this.props.item.told==="true"? 'Yes ':'No '} </div>
+            </div>
+            <div className="story-buttons">
+              <input style={{width:'85px'}} type="submit"  value="Edit Story" className="storyButton"/>
+              <input style={{width:'85px'}} type="submit" value="Delete"  className="storyButton" onClick={this.deleteStory}/>
+            </div>
+            </div>
+          </div>
             )
     }
     return null

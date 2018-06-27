@@ -65,14 +65,20 @@ class ConnectedTogoItem extends Component{
       if(this.props.places.length>0){
         const selectedAdmin=this.props.admins.filter(admin=>admin.id===this.props.item.suggested_by)[0]
         return(
-          <section className="table-row">
+          <div className="place-item">
             
-            <div style={{width:'40%'}}> <div id="taskId" style={{width:'30px'}}>{this.props.item.id} </div> {this.props.item.description} </div>
-            <span style={{width:'150px'}} > {this.props.item.visited==="true"? 'Yes ':'No '} </span>
-            <span style={{width:'150px'}} id="task-assignee" onClick={this.showUserDetails}> {selectedAdmin.name}</span>
-            <input style={{width:'85px'}} type="submit"  value="Edit Plan" className="taskButton"/>
-            <input style={{width:'85px'}} type="submit" value="Delete"  className="taskButton" onClick={this.deletePlace}/>
-          </section>
+            <div className="placediv">  {this.props.item.description} </div>
+             <div className="bottom-details">
+             <div className="place-details">
+             <div className="place-assignee">Suggested by: {selectedAdmin.name}</div>
+            <div > Visited?{this.props.item.visited==="true"? 'Yes ':'No '} </div>
+            </div>
+            <div className="place-buttons">
+            <input style={{width:'85px'}} type="submit"  value="Edit Plan" className="placeButton"/>
+            <input style={{width:'85px'}} type="submit" value="Delete"  className="placeButton" onClick={this.deletePlace}/>
+          </div>
+          </div>
+          </div>
             )
     }
     return null

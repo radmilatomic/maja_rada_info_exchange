@@ -16,16 +16,8 @@ class ConnectedTogoList extends Component{
             return <div>Waiting for results</div>
         }
         return (
-            <div className="table">
-                <div className="table-row">
-                    <div style={{width:'40%'}}>
-                        <div id="taskId" style={{width:'30px'}}> ID </div> DESCRIPTION 
-                    </div>
-                    <span style={{width:'150px'}}>DONE</span>
-                    <span style={{width:'150px'}}>ASSIGNEE</span>
-                    <div style={{width:'130px'}}></div>
-                    <div style={{width:'130px'}}></div>
-                </div>
+            
+                <div className="table">
             {this.props.places.map((item)=><TogoItem item={item} key={item.id}/>)}
             </div>
             )

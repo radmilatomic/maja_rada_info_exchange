@@ -51,7 +51,7 @@ componentDidMount(){
   return (
     <div id="togo">
     <AddPlace/>
-    <input type="submit" value="Add Place To List" onClick={this.showForm}/>
+    <input  id="addPlaceButton" type="submit" value="Add Place To List" onClick={this.showForm}/>
     <div><TogoList/></div>
     </div>)
  }

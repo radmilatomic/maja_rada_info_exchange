@@ -17,15 +17,7 @@ class ConnectedStoryList extends Component{
         }
         return (
             <div className="table">
-                <div className="table-row">
-                    <div style={{width:'40%'}}>
-                        <div id="taskId" style={{width:'30px'}}> ID </div> DESCRIPTION 
-                    </div>
-                    <span style={{width:'150px'}}>DONE</span>
-                    <span style={{width:'150px'}}>ASSIGNEE</span>
-                    <div style={{width:'130px'}}></div>
-                    <div style={{width:'130px'}}></div>
-                </div>
+                
             {this.props.stories.map((item)=><StoryItem item={item} key={item.id}/>)}
             </div>
             )
