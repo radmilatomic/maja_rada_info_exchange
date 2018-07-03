@@ -58,7 +58,7 @@ class ConnectedAddStory extends Component {
 
    fetch(request).then(()=>this.fetchStories())
      .catch(function(error){console.log(error);})
-  
+  this.props.setStoryInput(false);
   }
   
 

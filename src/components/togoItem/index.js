@@ -1,18 +1,20 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
-import { setPlaces } from "../../actions";
-
+import { setPlaces,renderDeletePlace } from "../../actions";
+import DeletePlace from "../deletePlace"
 import './style.css';
 
 
 const mapStateToProps = state => {
   return { places: state.places,
-            admins:state.admins };
+            admins:state.admins,
+            deletePlace:state.deletePlace };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     setPlaces: places => dispatch(setPlaces(places)),
+    renderDeletePlace:flag=>dispatch(renderDeletePlace(flag)),
     
   };
 };
@@ -46,17 +48,9 @@ class ConnectedTogoItem extends Component{
 
 
   deletePlace(e){
-    console.log("place will be deleted on this click")
-    e.preventDefault()
-    
-   const url=new URL('https://radmilatomic.pythonanywhere.com/api/deleteplace/'+this.props.item.id)
-   const request=new Request(url,{
-    method:'GET',
-    mode:'no-cors'
-   });
-
-   fetch(request).then(()=>this.fetchPlaces())
-     .catch(function(error){console.log(error);})
+    console.log("hello from delete Place")
+    this.props.renderDeletePlace(true);
+    console.log(this.props.deletePlace)
   }
 
 
@@ -65,6 +59,8 @@ class ConnectedTogoItem extends Component{
       if(this.props.places.length>0){
         const selectedAdmin=this.props.admins.filter(admin=>admin.id===this.props.item.suggested_by)[0]
         return(
+          <div>
+          <DeletePlace item={this.props.item}/>
           <div className="place-item">
             
             <div className="placediv">  {this.props.item.description} </div>
@@ -76,6 +72,7 @@ class ConnectedTogoItem extends Component{
             <div className="place-buttons">
             <input style={{width:'85px'}} type="submit"  value="Edit Plan" className="placeButton"/>
             <input style={{width:'85px'}} type="submit" value="Delete"  className="placeButton" onClick={this.deletePlace}/>
+          </div>
           </div>
           </div>
           </div>

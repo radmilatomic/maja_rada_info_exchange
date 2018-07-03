@@ -57,6 +57,8 @@ class ConnectedAddPlace extends Component {
    });
    fetch(request).then(()=>this.fetchPlaces())
      .catch(function(error){console.log(error);})
+
+  this.props.setPlaceInput(false);
   
   }
 

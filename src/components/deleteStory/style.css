@@ -1,0 +1,12 @@
+#delete-form{
+  width: 320px;
+  position: absolute;
+  margin: 9px auto;
+  z-index: 2;
+  background-color: #3C3C3C;
+  padding: 20px 10px;
+  color: #dd93f2;
+  border: solid #dd93f2  2px;
+  border-radius: 10px;
+  font: 400 14px "Gill Sans", system-ui;
+}

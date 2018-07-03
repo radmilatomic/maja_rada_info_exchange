@@ -27,3 +27,13 @@ export const setStoryInput=flag=>(
     {type:"STORY_INPUT",
     flag:flag}
     )
+
+export const renderDeleteStory=flag=>(
+    {type:"DELETE_STORY",
+    flag:flag}
+    )
+
+export const renderDeletePlace=flag=>(
+    {type:"DELETE_PLACE",
+    flag:flag}
+    )

@@ -3,7 +3,9 @@ const initialState = {
   auth : false,
   places:[],
   showPlaceInput:false,
-  showStoryInput:false
+  showStoryInput:false,
+  deleteStory:false,
+  deletePlace:false
   
 
 }
@@ -12,7 +14,6 @@ const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case "IS_AUTH":
     return Object.assign({},state, {auth:action.flag});
-
 
     case "ADMINS":
     return Object.assign({},state, {admins:action.admins});
@@ -28,9 +29,15 @@ const rootReducer = (state = initialState, action) => {
 
     case "STORY_INPUT":
     return Object.assign({},state, {showStoryInput:action.flag});
+
+    case "DELETE_STORY":
+    return Object.assign({},state, {deleteStory:action.flag});
+
+    case "DELETE_PLACE":
+    return Object.assign({},state, {deletePlace:action.flag});
       
     default:
-      return state;
+    return state;
 
 }
 };

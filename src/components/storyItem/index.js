@@ -1,18 +1,20 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
-import { setStories } from "../../actions";
-
+import { setStories,renderDeleteStory } from "../../actions";
+import DeleteStory from "../deleteStory"
 import './style.css';
 
 
 const mapStateToProps = state => {
   return { stories: state.stories,
-            admins:state.admins };
+            admins:state.admins,
+            deleteStory:state.deleteStory};
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     setStories: stories => dispatch(setStories(stories)),
+    renderDeleteStory:flag=>dispatch(renderDeleteStory(flag))
     
   };
 };
@@ -44,23 +46,16 @@ class ConnectedStoryItem extends Component{
   }
 
   deleteStory(e){
-    console.log("story will be deleted on this click")
-    e.preventDefault()
-    
-   const url=new URL('https://radmilatomic.pythonanywhere.com/api/deletestory/'+this.props.item.id)
-   const request=new Request(url,{
-    method:'GET',
-    mode:'no-cors'
-   });
-
-   fetch(request).then(()=>this.fetchStories())
-     .catch(function(error){console.log(error);})
+    e.preventDefault();
+    this.props.renderDeleteStory(true);
   }
 
     render(){
       if(this.props.stories.length>0){
         const selectedAdmin=this.props.admins.filter(admin=>admin.id===this.props.item.to_tell_by)[0]
         return(
+          <div>
+          <DeleteStory item={this.props.item}/>
           <div className="story-item">
             
            
@@ -75,6 +70,7 @@ class ConnectedStoryItem extends Component{
               <input style={{width:'85px'}} type="submit" value="Delete"  className="storyButton" onClick={this.deleteStory}/>
             </div>
             </div>
+          </div>
           </div>
             )
     }
