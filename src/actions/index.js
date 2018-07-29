@@ -37,3 +37,18 @@ export const renderDeletePlace=flag=>(
     {type:"DELETE_PLACE",
     flag:flag}
     )
+
+export const renderEditStory=flag=>(
+    {type:"EDIT_STORY",
+    flag:flag}
+    )
+
+export const renderEditPlace=flag=>(
+    {type:"EDIT_PLACE",
+    flag:flag}
+    )
+
+export const currentPlaceSet=place=>(
+    {type:"CURRENT_PLACE",
+    currentPlace:place}
+    )

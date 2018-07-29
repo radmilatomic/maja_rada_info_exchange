@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from "react-redux"; 
 
 import TogoItem from '../togoItem'
-
+import EditPlace from "../editPlace"
 import './style.css';
 
 
@@ -16,9 +16,11 @@ class ConnectedTogoList extends Component{
             return <div>Waiting for results</div>
         }
         return (
-            
+            <div>
+            <EditPlace/>
                 <div className="table">
             {this.props.places.map((item)=><TogoItem item={item} key={item.id}/>)}
+            </div>
             </div>
             )
     }

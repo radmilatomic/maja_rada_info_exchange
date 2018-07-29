@@ -1,21 +1,24 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
-import { setPlaces,renderDeletePlace } from "../../actions";
+import { setPlaces,renderDeletePlace,renderEditPlace,currentPlaceSet } from "../../actions";
 import DeletePlace from "../deletePlace"
+
 import './style.css';
 
 
 const mapStateToProps = state => {
   return { places: state.places,
             admins:state.admins,
-            deletePlace:state.deletePlace };
+            deletePlace:state.deletePlace,
+            currentPlace:state.currentPlace };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     setPlaces: places => dispatch(setPlaces(places)),
     renderDeletePlace:flag=>dispatch(renderDeletePlace(flag)),
-    
+    renderEditPlace:flag=>dispatch(renderEditPlace(flag)),
+    currentPlaceSet:item=>dispatch(currentPlaceSet(item)),
   };
 };
 
@@ -27,6 +30,7 @@ class ConnectedTogoItem extends Component{
     this.deletePlace=this.deletePlace.bind(this)
     this.fetchPlaces=this.fetchPlaces.bind(this)
     this.setData=this.setData.bind(this)
+    this.editPlace=this.editPlace.bind(this)
   }
 
   setData(responseData){
@@ -53,6 +57,13 @@ class ConnectedTogoItem extends Component{
     console.log(this.props.deletePlace)
   }
 
+  editPlace(e){
+    //console.log("Hello form edit place button");
+    this.props.renderEditPlace(true);
+    this.props.currentPlaceSet(this.props.item);
+    //console.log(this.props.currentPlace);
+    //console.log(this.props.item);
+  }
 
 
     render(){
@@ -60,6 +71,7 @@ class ConnectedTogoItem extends Component{
         const selectedAdmin=this.props.admins.filter(admin=>admin.id===this.props.item.suggested_by)[0]
         return(
           <div>
+         
           <DeletePlace item={this.props.item}/>
           <div className="place-item">
             
@@ -70,7 +82,7 @@ class ConnectedTogoItem extends Component{
             <div > Visited?{this.props.item.visited==="true"? ' Yes ':' No '} </div>
             </div>
             <div className="place-buttons">
-            <input style={{width:'85px'}} type="submit"  value="Edit Plan" className="placeButton"/>
+            <input style={{width:'85px'}} type="submit"  value="Edit Plan" className="placeButton" onClick={this.editPlace}/>
             <input style={{width:'85px'}} type="submit" value="Delete"  className="placeButton" onClick={this.deletePlace}/>
           </div>
           </div>

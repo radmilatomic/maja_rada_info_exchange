@@ -1,0 +1,134 @@
+.modal {
+  width: 320px;
+  position: absolute;
+  
+  
+  margin: 9px auto;
+  z-index: 2;
+  background-color: #3C3C3C;
+  padding: 20px 10px;
+  color: #dd93f2;
+  border: solid #dd93f2  2px;
+  border-radius: 10px;
+  font: 400 14px "Gill Sans", system-ui;
+  
+}
+
+@media(max-width: 500px){
+    .modal{
+        left: 2%;
+        top: 60px;
+    }
+    
+}
+
+@media(min-width: 501px){
+    .modal{
+        left: 20%;
+        top: 20%;
+    }
+    
+}
+
+#detailsWrapper{
+  margin-left: 5%;
+  margin-right:5%;
+}
+#showId{
+  left:2%;
+  font-family:"Gill Sans", system-ui;
+
+}
+#showCompleted{
+  right:2%;
+  font-family:"Gill Sans", system-ui;
+}
+
+
+.buttonDetails {
+    padding: 8px; 
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background-color: #ffffff; 
+    color: #3c3c3c; 
+    cursor: pointer;
+    font-family: "Gill Sans", system-ui;
+}
+.buttonCompleted {
+    padding: 7px; 
+    border-radius: 5px;
+    border: 1px solid #dddddd;
+    background: transparent; 
+    color: #ffffff; 
+    cursor: pointer;
+    font-family: "Gill Sans", system-ui;
+}
+
+.inline-field{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.description-field{
+  display:flex;
+  justify-content: center;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  
+}
+
+.buttonsWrapper{
+  display:flex;
+  justify-content: space-between;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  
+}
+
+.adminSelect{
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-family:"Gill Sans", system-ui;
+  
+}
+
+.inline-field input,
+.inline-field label,
+.inline-field div
+
+ {
+  display: inline-block;
+  margin-bottom: 0; 
+  vertical-align: middle; 
+}
+
+#descriptionDetails{
+   padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    
+    border: 1px solid #dddddd;
+    font: 400 14px "Gill Sans", system-ui;
+    
+    height:150px;
+    word-wrap: break-word;
+}
+
+#changeUser{
+   padding: 10px;
+    border-radius: 5px;
+    outline: none;
+    margin-right: 10px;
+    border: 1px solid #dddddd;
+     font: 400 14px "Gill Sans", system-ui;
+}
+
+.detailsLabel{
+  margin-right: 5px;
+}
+
+#visitedFlag{
+  width:90px;
+}

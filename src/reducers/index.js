@@ -5,7 +5,12 @@ const initialState = {
   showPlaceInput:false,
   showStoryInput:false,
   deleteStory:false,
-  deletePlace:false
+  deletePlace:false,
+  editStory:false,
+  editPlace:false,
+  currentPlace:{
+    
+  },
   
 
 }
@@ -35,6 +40,15 @@ const rootReducer = (state = initialState, action) => {
 
     case "DELETE_PLACE":
     return Object.assign({},state, {deletePlace:action.flag});
+
+    case "EDIT_STORY":
+    return Object.assign({},state, {editStory:action.flag});
+
+    case "EDIT_PLACE":
+    return Object.assign({},state, {editPlace:action.flag});
+
+    case "CURRENT_PLACE":
+    return Object.assign({},state, {currentPlace:action.currentPlace});
       
     default:
     return state;
