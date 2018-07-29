@@ -132,3 +132,7 @@
 #visitedFlag{
   width:90px;
 }
+
+#sendingId{
+  dispaly:none;
+}
