@@ -29,11 +29,15 @@ class ConnectedEditPlace extends Component {
     this.toggle=this.toggle.bind(this)
     this.editMethod=this.editMethod.bind(this)
     this.modalRoot = document.getElementById('modal-root');
+    this.state={
+      visited:this.props.currentPlace.visited
+    }
   }
 
   setData(responseData){
   console.log(responseData);
   this.props.setPlaces(responseData); 
+  this.props.renderEditPlace(false);
  }
 
   fetchPlaces(){
@@ -53,9 +57,11 @@ class ConnectedEditPlace extends Component {
     e.preventDefault();
     if(this.visitedToggle.value==="Visited"){
       this.visitedToggle.value="Not Visited";
+     
     }
     else{
       this.visitedToggle.value="Visited";
+     
     }
   }
 
@@ -64,7 +70,8 @@ class ConnectedEditPlace extends Component {
     var form=new FormData(document.getElementById('editPlaceForm'))
     
     form.append("id",this.props.currentPlace.id)
-    form.append("visited","true")
+    form.append("visited",this.visitedToggle.value==="Visited"?"true":"false");
+    
     const url=new URL('https://radmilatomic.pythonanywhere.com/api/changeplace')
     const request=new Request(url,{
     method:'POST',
@@ -73,9 +80,6 @@ class ConnectedEditPlace extends Component {
    });
    fetch(request).then(()=>this.fetchPlaces())
      .catch(function(error){console.log(error);})
-
-  
-  
   }
 
   exitEdit(e){
@@ -100,7 +104,7 @@ class ConnectedEditPlace extends Component {
             <div className="description-field"> <textarea id ="descriptionDetails" name="place" type="text"  defaultValue={this.props.currentPlace.description} ref={(a) => this.inputTask = a}/></div>
             <div className="buttonsWrapper"> 
             
-              <div> <div id="visitedFlag" className="buttonDetails"  onClick={this.toggle} ref={(b) => this.visitedToggle = b}>value={this.props.currentPlace.visited==="true"?"Visited":"Not Visited"}</div></div>
+              <div> <input type="submit" id="visitedFlag" className="buttonDetails"  value={this.props.currentPlace.visited==="true"?"Visited":"Not Visited"} onClick={this.toggle} ref={(b) => this.visitedToggle = b}/></div>
               <div className="detailsLabel">Suggested_by: </div>
               <select  ref={(a) => this.selectedUser = a} id="changeUser" name="suggested_by">
                 {this.props.admins.map((admin)=><option key={admin.id}>{admin.name}</option>)}
