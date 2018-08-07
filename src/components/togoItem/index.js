@@ -72,7 +72,7 @@ class ConnectedTogoItem extends Component{
         return(
           <div>
          
-          <DeletePlace item={this.props.item}/>
+          
           <div className="place-item">
             
             <div className="placediv">  {this.props.item.description} </div>
