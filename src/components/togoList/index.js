@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 
 import TogoItem from '../togoItem'
 import EditPlace from "../editPlace"
-import DeletePlace from "../editPlace"
+import DeletePlace from "../deletePlace"
 import './style.css';
 
 

@@ -1,7 +1,7 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
-import { setPlaces,renderDeletePlace,renderEditPlace,currentPlaceSet } from "../../actions";
-import DeletePlace from "../deletePlace"
+import { setPlaces,renderDeletePlace,renderEditPlace,currentPlaceSet,place2Delete } from "../../actions";
+
 
 import './style.css';
 
@@ -10,7 +10,8 @@ const mapStateToProps = state => {
   return { places: state.places,
             admins:state.admins,
             deletePlace:state.deletePlace,
-            currentPlace:state.currentPlace };
+            currentPlace:state.currentPlace,
+            placeToDelete:state.placeToDelete };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -19,6 +20,7 @@ const mapDispatchToProps = dispatch => {
     renderDeletePlace:flag=>dispatch(renderDeletePlace(flag)),
     renderEditPlace:flag=>dispatch(renderEditPlace(flag)),
     currentPlaceSet:item=>dispatch(currentPlaceSet(item)),
+    place2Delete:place=>dispatch(place2Delete(place)),
   };
 };
 
@@ -54,7 +56,10 @@ class ConnectedTogoItem extends Component{
   deletePlace(e){
     console.log("hello from delete Place")
     this.props.renderDeletePlace(true);
-    console.log(this.props.deletePlace)
+    console.log(this.props.deletePlace);
+    this.props.place2Delete(this.props.item);
+    console.log(this.props.placeToDelete)
+
   }
 
   editPlace(e){

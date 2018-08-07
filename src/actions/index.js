@@ -52,3 +52,7 @@ export const currentPlaceSet=place=>(
     {type:"CURRENT_PLACE",
     currentPlace:place}
     )
+export const place2Delete=place=>(
+    {type:"PLACE_TO_DELETE",
+    place2Delete:place}
+    )

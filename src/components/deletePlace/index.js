@@ -14,6 +14,7 @@ const mapDispatchToProps = dispatch => {
 
 const mapStateToProps = state => {
   return { deletePlace: state.deletePlace,
+           placeToDelete:state.placeToDelete,
             
              };
 };
@@ -56,7 +57,7 @@ class ConnectedDeletePlace extends Component {
     console.log("place will be deleted on this click")
     e.preventDefault()
     
-    const url=new URL('https://radmilatomic.pythonanywhere.com/api/deleteplace/'+this.props.item.id)
+    const url=new URL('https://radmilatomic.pythonanywhere.com/api/deleteplace/'+this.props.placeToDelete.id)
     const request=new Request(url,{
     method:'GET',
     mode:'no-cors'
