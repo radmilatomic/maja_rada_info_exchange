@@ -52,7 +52,17 @@ export const currentPlaceSet=place=>(
     {type:"CURRENT_PLACE",
     currentPlace:place}
     )
+
+export const currentStorySet=story=>(
+    {type:"CURRENT_STORY",
+    currentStory:story}
+    )
+
 export const place2Delete=place=>(
     {type:"PLACE_TO_DELETE",
     place2Delete:place}
+    )
+export const story2Delete=story=>(
+    {type:"STORY_TO_DELETE",
+    story2Delete:story}
     )

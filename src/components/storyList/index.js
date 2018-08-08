@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import { connect } from "react-redux"; 
 
 import StoryItem from '../storyItem'
-
+import DeleteStory from "../deleteStory"
 import './style.css';
 
 
@@ -16,9 +16,12 @@ class ConnectedStoryList extends Component{
             return <div>Waiting for results</div>// ovo radimo da nam ne pukne aplikacija ako nema nista u store-u
         }
         return (
+            <div>
+            <DeleteStory/>
             <div className="table">
                 
             {this.props.stories.map((item)=><StoryItem item={item} key={item.id}/>)}
+            </div>
             </div>
             )
     }

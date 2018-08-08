@@ -14,6 +14,12 @@ const initialState = {
   placeToDelete:{
 
   },
+  currentStory:{
+
+  },
+  storyToDelete:{
+
+  },
   
 
 }
@@ -55,6 +61,9 @@ const rootReducer = (state = initialState, action) => {
 
     case "PLACE_TO_DELETE":
     return Object.assign({},state, {placeToDelete:action.place2Delete});
+
+    case "STORY_TO_DELETE":
+    return Object.assign({},state, {storyToDelete:action.story2Delete});
       
     default:
     return state;

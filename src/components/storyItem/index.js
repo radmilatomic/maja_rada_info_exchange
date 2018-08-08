@@ -1,6 +1,6 @@
 import React, {Component} from 'react'
 import { connect } from "react-redux";
-import { setStories,renderDeleteStory } from "../../actions";
+import { setStories,renderDeleteStory,renderEditStory,currentStorySet,story2Delete } from "../../actions";
 import DeleteStory from "../deleteStory"
 import './style.css';
 
@@ -14,8 +14,10 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     setStories: stories => dispatch(setStories(stories)),
-    renderDeleteStory:flag=>dispatch(renderDeleteStory(flag))
-    
+    renderDeleteStory:flag=>dispatch(renderDeleteStory(flag)),
+    renderEditStory:flag=>dispatch(renderEditStory(flag)),
+    currenStorySet:item=>dispatch(currentStorySet(item)),
+    story2Delete:story=>dispatch(story2Delete(story)),
   };
 };
 
@@ -48,6 +50,8 @@ class ConnectedStoryItem extends Component{
   deleteStory(e){
     e.preventDefault();
     this.props.renderDeleteStory(true);
+    this.props.story2Delete(this.props.item);
+    console.log(this.props.storyToDelete)
   }
 
     render(){
