@@ -8,7 +8,9 @@ import './style.css';
 const mapStateToProps = state => {
   return { stories: state.stories,
             admins:state.admins,
-            deleteStory:state.deleteStory};
+            deleteStory:state.deleteStory,
+            editStory:state.editStory
+          };
 };
 
 const mapDispatchToProps = dispatch => {
@@ -16,7 +18,7 @@ const mapDispatchToProps = dispatch => {
     setStories: stories => dispatch(setStories(stories)),
     renderDeleteStory:flag=>dispatch(renderDeleteStory(flag)),
     renderEditStory:flag=>dispatch(renderEditStory(flag)),
-    currenStorySet:item=>dispatch(currentStorySet(item)),
+    currentStorySet:item=>dispatch(currentStorySet(item)),
     story2Delete:story=>dispatch(story2Delete(story)),
   };
 };
@@ -28,6 +30,7 @@ class ConnectedStoryItem extends Component{
     this.deleteStory=this.deleteStory.bind(this)
     this.fetchStories=this.fetchStories.bind(this)
     this.setData=this.setData.bind(this)
+    this.editStory=this.editStory.bind(this)
   }
 
   setData(responseData){
@@ -54,6 +57,15 @@ class ConnectedStoryItem extends Component{
     console.log(this.props.storyToDelete)
   }
 
+  editStory(e){
+    console.log("Hello form edit story button");
+    this.props.renderEditStory(true);
+    this.props.currentStorySet(this.props.item);
+    console.log(this.props.editStory);
+    //console.log(this.props.currentPlace);
+    //console.log(this.props.item);
+  }
+
     render(){
       if(this.props.stories.length>0){
         const selectedAdmin=this.props.admins.filter(admin=>admin.id===this.props.item.to_tell_by)[0]
@@ -70,7 +82,7 @@ class ConnectedStoryItem extends Component{
               <div> Told? {this.props.item.told==="true"? 'Yes ':'No '} </div>
             </div>
             <div className="story-buttons">
-              <input style={{width:'85px'}} type="submit"  value="Edit Story" className="storyButton"/>
+              <input style={{width:'85px'}} type="submit"  value="Edit Story" className="storyButton" onClick={this.editStory}/>
               <input style={{width:'85px'}} type="submit" value="Delete"  className="storyButton" onClick={this.deleteStory}/>
             </div>
             </div>

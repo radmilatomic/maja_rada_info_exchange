@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 
 import StoryItem from '../storyItem'
 import DeleteStory from "../deleteStory"
+import EditStory from "../editStory"
 import './style.css';
 
 
@@ -18,6 +19,7 @@ class ConnectedStoryList extends Component{
         return (
             <div>
             <DeleteStory/>
+            <EditStory/>
             <div className="table">
                 
             {this.props.stories.map((item)=><StoryItem item={item} key={item.id}/>)}

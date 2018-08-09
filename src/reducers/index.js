@@ -59,6 +59,9 @@ const rootReducer = (state = initialState, action) => {
     case "CURRENT_PLACE":
     return Object.assign({},state, {currentPlace:action.currentPlace});
 
+    case "CURRENT_STORY":
+    return Object.assign({},state, {currentStory:action.currentStory});
+
     case "PLACE_TO_DELETE":
     return Object.assign({},state, {placeToDelete:action.place2Delete});
 
